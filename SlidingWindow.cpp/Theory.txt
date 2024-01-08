@@ -1,0 +1,26 @@
+// (note if array is 1 2 3 4 then 2 3 4 is a subarray but 1 2 4 is not a subarray as it is not contiguous)
+
+// Identification : 
+// 1. Array/ string Question  
+// 2. Subarray/substring 
+// 3. largest,smallest,maximum,minimum etc asked
+// 4. k (window size would be given/or to be calculated) 
+
+//  Types of sliding window problems : 
+
+// 1. Fixed size sliding window 
+// 2. Variable size sliding window (size of window can be asked like find max / min window size with a given condition like max/min etc)
+
+ Example : 
+// Problem Statement : find max sum of subarray of size 3 in O(n) complexity (Type I)
+// Problem Statement : find the size of max subarray (k) with sum 5  (Type II)
+
+
+Type 1 :
+while(e < array size){
+    calculation
+    window<k -> e++;
+    window==k{
+        find ans from calc and slide the window s++,e++;
+    }
+}

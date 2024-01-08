@@ -1,0 +1,15 @@
+OOPS -> (object oriented programming principles)
+1. Object is an instance of class
+2. Empty class has 1 byte memory to keep a track of its existence
+3. Padding : adding extra space to a class for faster access 
+eg class animal{
+    char a;
+    int b;
+    int c;
+};
+size of class animal is 4+4+4=12 not 1+4+4=9 bcuz by allocating 3 extra bytes to the char a, we create divisions of 4 which works faster in memory than the previous alignment
+
+4. Greedy Alignment : We create larger datatype variables in the starting to increase speed and efficiency
+
+5 . By deafault , members are marked as private in a class
+6 . We use getter and setter functions to access private values of a class
