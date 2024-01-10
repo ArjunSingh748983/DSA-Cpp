@@ -10,7 +10,7 @@ public:
     node(int data)
     {
         this->data = data;
-        this->next = NULL;
+        this->next = nullptr;
     }
 
     // Constructor with data as well as next :
