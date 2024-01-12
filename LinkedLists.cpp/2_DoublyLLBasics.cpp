@@ -135,17 +135,79 @@ void deleteNode(node *temp)
     free(temp);
 }
 
-/*************************** INSERTION BEFORE THE HEAD *******************************************/
+/********************************** INSERTION *******************************************/
 
+// INSERTION BEFORE HEAD ->
+node *insertBeforeHead(node *head, int val)
+{
+    node *newHead = new node(val, head, nullptr);
+    head->back = newHead;
+    return newHead;
+}
 
+// INSERTION BEFORE TAIL ->
+node *insertBeforeTail(node *head, int val)
+{
+    if (head->next == nullptr)
+        return insertBeforeHead(head, val);
+    node *tail = head;
+    while (tail->next)
+    {
+        tail = tail->next;
+    }
+    node *prev = tail->back;
+    node *newNode = new node(val, tail, prev);
+    tail->back = newNode;
+    prev->next = newNode;
+    return head;
+}
+
+// INSERTION BEFORE Kth ELEMENT ->
+node *insertBeforeKthNode(node *head, int k, int val)
+{
+    node *temp = head;
+    int cnt = 0;
+    while (temp)
+    {
+        cnt++;
+        if (cnt == k)
+        break;
+        temp = temp->next;
+    }
+            if (k == 1)
+            {
+                return insertBeforeHead(head, val);
+            }
+            else
+            {
+                node *prev = temp->back;
+                node *newNode = new node(val, temp, prev);
+                prev->next = newNode;
+                temp->back = newNode;
+            }
+    return head;
+}
+
+// INSERT BEFORE TTHE NODE (node!=head) ->
+void insertBeforeNode(node*temp,int val){
+    node* prev=temp->back;
+    node* newNode=new node(val,temp,prev);
+    prev->next=newNode;
+    temp->back=newNode;
+}
 int main()
 {
     vector<int> arr{2, 4, 6, 9, 7};
     node *head = convertArrayToDll(arr);
     // head = deleteHead(head);
     // head = deleteTail(head);
-    // head = deleteKthElement(head, 1);
-    deleteNode(head->next->next);
+    // h = insertBeforeKthNode(head, 3, 5);
+    // deleteNode(head->next->next);
+    // head = insertBeforeHead(head, 3);
+    // head = insertBeforeTail(head, 3);
+    // head=insertBeforeKthNode(head,3,5);
+    insertBeforeNode(head->next->next,5);
     printLL(head);
     return 0;
-}
+} 
+ 
