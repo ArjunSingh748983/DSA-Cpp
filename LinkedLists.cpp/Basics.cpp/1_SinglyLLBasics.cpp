@@ -260,7 +260,7 @@ int main()
     // head = deleteEle(head, 9);
     // head=insertAtHead(head,5);
     // head = insertAtTail(head, 5);
-    head = insertBeforeValue(head, 3, 6);
+    // head = insertBeforeValue(head, 3, 6);
     printLL(head);
 
     return 0;

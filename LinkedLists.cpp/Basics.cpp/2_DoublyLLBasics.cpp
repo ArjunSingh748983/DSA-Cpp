@@ -188,7 +188,7 @@ node *insertBeforeKthNode(node *head, int k, int val)
     return head;
 }
 
-// INSERT BEFORE TTHE NODE (node!=head) ->
+// INSERT BEFORE THE NODE (node!=head) ->
 void insertBeforeNode(node*temp,int val){
     node* prev=temp->back;
     node* newNode=new node(val,temp,prev);

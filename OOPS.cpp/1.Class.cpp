@@ -19,7 +19,7 @@ public:
     void eat()
     {
         cout << "eating" << endl;
-    };
+    }
     int getWeight()
     {
         return weight;
