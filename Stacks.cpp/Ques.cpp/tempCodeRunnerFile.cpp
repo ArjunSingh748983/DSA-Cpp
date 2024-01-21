@@ -13,28 +13,67 @@ int calc(int v1, int v2, char op)
     else
         return v1 / v2;
 }
-int evalPostFix(string &str)
+int precedence(char ch)
 {
-    stack<int> st;
-    for (int i = str.size() - 1; i >= 0; i--)
+    if (ch == '^')
+        return 4;
+    else if (ch == '*' or ch == '/')
+        return 3;
+    else if (ch == '+' or ch == '-')
+        return 2;
+    else
+        return 0;
+}
+int evalInfix(string &str)
+{
+    stack<int> nums;
+    stack<char> ops;
+    for (int i = 0; i < str.size(); i++)
     {
-        char ch = str[i];
-        if (isdigit(ch))
-            st.push(ch - '0');
-        else
+        if (isdigit(str[i]))
+            nums.push(str[i] - '0');
+        else if (str[i] == ')')
         {
-            int v2 = st.top();
-            st.pop();
-            int v1 = st.top();
-            st.pop();
-            st.push(calc(v1, v2, ch));
+            while (!ops.empty() and ops.top() != '(')
+            {
+                char op = ops.top();
+                int v2 = nums.top();
+                nums.pop();
+                int v1 = nums.top();
+                nums.pop();
+                nums.push(calc(v1, v2, op));
+            }
+            if (!ops.empty())
+                ops.pop();
         }
+            else
+            {
+                while (!ops.empty() and precedence(ops.top()) >= precedence(str[i]))
+                {
+                    char op = ops.top();
+                    int v2 = nums.top();
+                    nums.pop();
+                    int v1 = nums.top();
+                    nums.pop();
+                    nums.push(calc(v1, v2, op));
+                }
+                ops.push(str[i]);
+            }
+        }
+    while (!ops.empty())
+    {
+        char op = ops.top();
+        int v2 = nums.top();
+        nums.pop();
+        int v1 = nums.top();
+        nums.pop();
+        nums.push(calc(v1, v2, op));
     }
-    return st.top();
+    return nums.top();
 }
 int main()
 {
-    string str = "284/1*+9-"; // 
-    cout << evalPostFix(str);
+    string str = "1*(2*(3-1)+2)";
+    cout << evalInfix(str);
     return 0;
 }
