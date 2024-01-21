@@ -16,7 +16,7 @@ int calc(int v1, int v2, char op)
 int evalPostFix(string &str)
 {
     stack<int> st;
-    for (int i = str.size() - 1; i >= 0; i--)
+    for (int i = 0; i < str.size(); i++)
     {
         char ch = str[i];
         if (isdigit(ch))
@@ -34,7 +34,7 @@ int evalPostFix(string &str)
 }
 int main()
 {
-    string str = "284/1*+9-"; // 
+    string str = "284/1*+9-";
     cout << evalPostFix(str);
     return 0;
 }

@@ -34,7 +34,7 @@ int evalPostFix(string &str)
 }
 int main()
 {
-    string str = "284/1*+9-"; // 
+    string str = "-9+*1/482";
     cout << evalPostFix(str);
     return 0;
 }
