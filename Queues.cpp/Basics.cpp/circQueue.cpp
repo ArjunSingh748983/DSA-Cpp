@@ -5,30 +5,32 @@ class Queue
     int front;
     int back;
     vector<int> v;
+    int currSize;
+    int totalSize;
 
 public:
-    Queue()
+    Queue(int n)
     {
+        this->v.resize(n);
         this->front = -1;
         this->back = -1;
+        this->currSize = 0;
+        this->totalSize = n;
     }
     void enqueue(int data)
     {
-        v.push_back(data);
-        this->back++;
-        if (this->back == 0) // first element added
-            this->front = 0; 
+        if (isFull())
+            return;
+        this->back = (this->back + 1) % this->totalSize;
+        this->v[this->back] = data;
+        this->currSize++;
     }
     void dequeue()
     {
-        if (this->front == this->back) // single/zero element in queue -> reset
-        { 
-            this->front = -1;
-            this->back = -1;
-            this->v.clear();
-        }
-        else
-            this->front++;
+        if (isEmpty())
+            return;
+        this->front = (this->front + 1) % this->totalSize;
+        this->currSize--;
     }
     int getfront()
     {
@@ -38,12 +40,16 @@ public:
     }
     bool isEmpty()
     {
-        return this->front == -1;
+        return this->currSize == 0;
+    }
+    bool isFull()
+    {
+        return this->currSize == this->totalSize;
     }
 };
 int main()
 {
-    Queue qu;
+    Queue qu(3);
     qu.enqueue(10);
     qu.enqueue(20);
     qu.enqueue(30);
