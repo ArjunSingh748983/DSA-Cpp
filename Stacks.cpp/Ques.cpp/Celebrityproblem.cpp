@@ -41,7 +41,7 @@ int celebrity(vector<vector<int>> &M)
 }
 int main()
 {
-    vector<vector<int>> v{{0, 1, 0}, {0, 0, 0}, {0, 1, 0}};
+    vector<vector<int>>v{{0, 1, 0}, {0, 0, 0}, {0, 1, 0}};
     cout << celebrity(v);
     return 0;
 }
