@@ -21,6 +21,19 @@ while(e < array size){
     calculation
     window<k -> e++;
     window==k{
-        find ans from calc and slide the window s++,e++;
+        find ans from calc 
+        remove calculations of i from the ans
+        maintain the window_size and slide the window s++,e++;
     }
+}
+
+Type 2 : (variable size sliding window general format)
+while(j<size){
+    calculations
+}
+if(window_size<k) j++;
+else if(window_size==k){
+    calc se ans nikalo
+    i ko calc se hatao
+    windowsize maintain and slide 
 }
