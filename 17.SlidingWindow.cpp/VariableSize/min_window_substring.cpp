@@ -2,6 +2,6 @@
 using namespace std;
 
 int main() {
-    // hbjbjkb lj;nk//
+    // hbjbjkb lj;hkbhknk//
     return 0;
 }
