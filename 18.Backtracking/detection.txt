@@ -1,0 +1,23 @@
+when to think of backtracking :
+1. Choices and descisions invloved
+2. All combinations might be needed to be explored
+3. Controlled Recursion
+4. Number of Choices very large
+5. Size of constraint small (n<=20)
+6. Greedy approach might fail
+7. When you get a feeling that recursion won't work
+
+// Generalized Approach :
+
+void solve(variable pass by reference){
+    isSolved
+    print/save
+
+    for(c in all choices){
+        if(isValid()==true)
+        {
+        changes in variable
+        func(variable)
+    }
+    }
+}
