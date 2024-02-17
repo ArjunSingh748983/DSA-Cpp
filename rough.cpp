@@ -1,23 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
-// void rev(vector<int>&arr, int l,int r) {
-    
-//     if (l>=r) return;
-//     swap(arr[l],arr[r]);
-//     rev(arr, l+1,r-1);
-// }
-
-void rev2(vector<int>&arr, int i) {
-    
-    if (i>=arr.size()/2) return;
-    swap(arr[i],arr[arr.size()-1-i]);
-    rev2(arr, i+1);
+void printSubsequences(int idx, vector<int> &ds, vector<int> arr, int n, set<vector<int>> &res)
+{
+    if (idx == n) //  t.c = n*O(n) and space : O (n)
+    {
+        res.insert(ds);
+        return;
+    }
+    // take or pick the particular index into the subsequence
+    ds.push_back(arr[idx]);
+    printSubsequences(idx + 1, ds, arr, n, res);
+    // not pick the index into subsequence
+    ds.pop_back();
+    printSubsequences(idx + 1, ds, arr, n, res);
 }
-int main() {
-    vector<int> arr{3, 4, 5, 1, 2, 6};
-    // int n = arr.size()-1;
-    // rev(arr, 0, n);
-    rev2(arr, 0);
-    for(auto x: arr) cout<<x<<" ";
+int main()
+{
+    vector<int> arr{3, 1, 2};
+    int n = arr.size();
+    vector<int> ds;
+    
     return 0;
 }
