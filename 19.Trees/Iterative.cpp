@@ -110,6 +110,10 @@ void postOrder_single_stack(node *root)
         }
     }
 }
+
+void PreOrder_InOrder_PostOrder(node* root){
+    
+}
 int main()
 {
     node *root = new node(1);
