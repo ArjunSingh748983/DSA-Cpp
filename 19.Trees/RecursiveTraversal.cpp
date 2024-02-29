@@ -61,8 +61,14 @@ vector<vector<int>> levelOrderTraversal(node *root , vector<vector<int>>&ans) //
     }
     return ans;
 }
+
+vector<int> verticalOrderTraversal(node*root){
+
+
+
+}
 int main()
-{
+{ 
     node *root = new node(1);
     root->left = new node(2);
     root->left->left = new node(4);
