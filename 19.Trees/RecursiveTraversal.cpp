@@ -65,7 +65,6 @@ vector<vector<int>> levelOrderTraversal(node *root , vector<vector<int>>&ans) //
 vector<int> verticalOrderTraversal(node*root){
 
 
-
 }
 int main()
 { 
