@@ -95,26 +95,23 @@ void heapSort(int arr[], int n)
 int main()
 {
     heap h;
-    h.insert(50);
-    h.insert(55);
-    h.insert(53);
-    h.insert(52);
-    h.insert(54);
-    h.remove();
-    h.remove();
-    // h.print();
-    cout << endl;
-    int arr[6] = {-1, 54, 53, 55, 52, 50};
-    int n = 5;
-    for (int i = n / 2; i > 0; i--) // ignoring the leaf nodes
-    {
-        heapify(arr, n, i); // n times O(logn)
+    for(int i=1;i<=11;i++){
+       h.insert(i);
     }
+    // for(int i=12;i<=111;i++){}
+    h.print();
+    // cout << endl;
+    // int arr[6] = {-1, 54, 53, 55, 52, 50};
+    // int n = 5;
+    // for (int i = n / 2; i > 0; i--) // ignoring the leaf nodes
+    // {
+    //     heapify(arr, n, i); // n times O(logn)
+    // }
 
-    heapSort(arr, n);
+    // heapSort(arr, n);
 
-    for (int i = 1; i <= n; i++)
-        cout << arr[i] << " ";
+    // for (int i = 1; i <= n; i++)
+    //     cout << arr[i] << " ";
 
     return 0;
 }
