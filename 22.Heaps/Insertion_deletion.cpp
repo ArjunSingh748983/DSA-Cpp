@@ -130,6 +130,7 @@ int main()
     maxHeap.pop();
     cout << maxHeap.top();
     priority_queue<int, vector<int>, greater<int>> minHeap;
+    // declare Minheap => priority_queue<data_type,vector<data_type>,greater<data_type>>min_heap;
     minHeap.push(4);
     minHeap.push(2);
     minHeap.push(5);
