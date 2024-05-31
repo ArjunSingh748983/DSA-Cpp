@@ -6,3 +6,4 @@ Step2. To solve the problem after identification.
    3. To count all possible ways - sum of all stuff.
         To find minimum/maximum - Take Minimum/maximum of all stuff.
 
+   4. if there is something like arr[i-1] and arr[i-2] there will always be scope of space optimaztion.
