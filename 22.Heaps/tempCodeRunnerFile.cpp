@@ -50,13 +50,13 @@ void printHeap(int arr[], int N)
     cout << "Array representation of Heap is:\n";
 
     for (int i = 0; i < N; ++i)
-        cout << arr[i] << "-";
+        cout << arr[i] << " ";
     cout << "\n";
 }
 int main()
 {
-    int arr[20] = {15,30,20,19,22,14,32,31,29,40,25,28,22,17,16,45,41,65,55,49};
-    int n = 20;
+    int arr[11] = {25,3,45,1,36,17,100};
+    int n = 11;
     buildHeap(arr, n);
     printHeap(arr, n); // prints as if the array is a binary tree
     return 0;
