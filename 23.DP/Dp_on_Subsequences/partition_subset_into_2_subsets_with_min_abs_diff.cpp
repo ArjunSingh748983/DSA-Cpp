@@ -1,11 +1,10 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-int minDifference(int arr[], int n)
-{
+int minDifference(int arr[], int n) {
     int totSum = 0;
     for (int i = 0; i < n; i++) totSum += arr[i];
-    vector<vector<bool>> dp(n, vector<bool>(totSum + 1, false));
+    vector<vector<bool>> dp(n, vector<bool>((totSum + 1)/2, false)); // saves space and prevents repetitive subsets 
     for (int i = 0; i < n; i++) dp[i][0] = true;
     if (arr[0] <= totSum) dp[0][arr[0]] = true;
     for (int ind = 1; ind < n; ind++){

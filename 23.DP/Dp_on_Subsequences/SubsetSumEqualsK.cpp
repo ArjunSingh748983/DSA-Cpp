@@ -17,6 +17,12 @@ int main(){
     int n = arr.size();
     int target = 7;
     vector<vector<int>> dp(n + 1, vector<int>(target + 1, -1));
+    // dp[n][target+1];
+    // dp[n][0] = true;
+    // for(i->0 to n) dp[0][0],dp[1][0],dp[2][0] =true;
+    // dp[0][arr[0]] = true;
+
+
     f(arr, n - 1, target, dp) ? (cout << "Yes") : (cout << "No");
     return 0;
 }
