@@ -5,8 +5,7 @@ class animal
 public:
     int age;
     int weight;
-    void eat()
-    {
+    void eat() {
         cout << "Eating" << endl;
     }
 };
@@ -14,11 +13,13 @@ public:
 // Inheritance :
 class dog : public animal
 {
+    public:
+    int bodyCount;
 };
 
-int main()
-{
+int main() {
     dog pillu;
-    pillu.eat();
+    pillu.bodyCount = 45;
     return 0;
+
 }
