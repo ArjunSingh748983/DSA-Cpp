@@ -3,47 +3,47 @@ using namespace std;
 class Animal
 {
     // states/attributes
-private:
+// private:
+public:
     int weight;
     char gender;
     string name;
     // Behaviour/Methods
 
-    void sleep()
-    {
+    void sleep() {
         cout << "sleeping" << endl;
     }
 
 public:
-    int age;
-    void eat()
-    {
+    Animal(){};
+    Animal(string name){
+        this->name=name;
+    }
+    void eat(){
         cout << "eating" << endl;
     }
-    int getWeight()
-    {
+    int getWeight(){
         return weight;
     }
-    void setWeight(int w)
-    {
+    void setWeight(int w){
         weight = w;
     }
+    ~Animal(){
+        cout<<"hello";
+    }
 };
-int main()
-{
-    // Animal ramesh;
-    // ramesh.name = "lion";
-    // cout << ramesh.name << endl;
-    // ramesh.setWeight(55);
-    // cout << ramesh.getWeight();
-
-    // Using Dynamic memory allocation in heap using pointers
-    Animal *suresh = new Animal;
-    (*suresh).age = 45;
-    suresh->age = 50;
-    // cout<<(*suresh).age;
-    cout << suresh->age; // to access values stored in pointer use -> arrow operator
-    suresh->eat();
-
+int main() {
+    int n ;
+    cin>>n;
+    Animal *arr = new Animal[n];
+    for(int i = 0;i<n;i++){
+        cout<<"Enter name of "<<i+1<<" th Animal"<<endl;
+        string nameOfAnimal;
+        cin>>nameOfAnimal;
+        arr[i] = Animal(nameOfAnimal);
+    }
+    for(int i = 0;i<n;i++) cout<<"Animal "<<i+1
+    << " is "<<arr[i].name<<"\n";
+    delete []arr;
     return 0;
 }

@@ -12,7 +12,7 @@ class mango : public fruit // Child
 public:
     string colour;
 };
-class alphanso : public mango // Multilevel inheritance    Grand child
+class alphanso : public mango // Multilevel inheritance => Grand child : fruit => mango => alphonso
 {
 public:
     int sugarlevel;
